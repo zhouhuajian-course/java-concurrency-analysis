@@ -13,3 +13,13 @@
 每个Java程序一般都是一个进程，从代码的角度上看，每个进程至少有一个线程，叫做主线程。
 
 但实际上，如果算上内存管理、信号处理等系统线程，每个Java进程至少有多个线程。
+
+如果把线程分用户线程和系统线程，那么可以说每个进程至少有一个用户线程。
+
+![user-and-system-thread.png](readme/user-and-system-thread.png)
+
+## 线程中断
+
+有些方法发现线程已被中断，会抛出线程中断异常 例如Thread.sleep
+
+线程也可以自己检查是否被中断了 Thread.interrupted()
