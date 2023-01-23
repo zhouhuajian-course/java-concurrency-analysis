@@ -5,16 +5,21 @@ import java.io.IOException;
 public class Interrupt02 {
     public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(() -> {
-            while (true) {
-                // 如果没有这个检查，即使线程状态为被中断状态，也会继续运行
-                if (Thread.interrupted()) {
-                    System.out.format("%s has been interrupted%n", Thread.currentThread().getName());
-                    System.exit(1);
-                }
-             }
+            try {
+                while (true) {
+                    if (Thread.interrupted()) {
+                        throw new InterruptedException();
+                        // 错误的用法 System.exit() 会把整个程序退出
+                    }
+                 }
+            } catch (InterruptedException e) {
+                System.out.format("%s has been interrupted%n", Thread.currentThread().getName());
+            }
         });
         t.start();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         t.interrupt();
+        Thread.sleep(3000);
+        System.out.printf("Hello from '%s'%n", Thread.currentThread().getName());
     }
 }

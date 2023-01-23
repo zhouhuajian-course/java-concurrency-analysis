@@ -22,4 +22,8 @@
 
 有些方法发现线程已被中断，会抛出线程中断异常 例如Thread.sleep
 
-线程也可以自己检查是否被中断了 Thread.interrupted()
+线程也可以自己检查是否被中断了 Thread.interrupted() 对比 Thread.isInterrupted() 
+
+Thread.interrupted()底层调用的是 currentThread().isInterrupted(true) clearInterrupted参数为true
+
+在某些场景下clearInterrupted非常重要
