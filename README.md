@@ -27,3 +27,27 @@
 Thread.interrupted()底层调用的是 currentThread().isInterrupted(true) clearInterrupted参数为true
 
 在某些场景下clearInterrupted非常重要
+
+## Synchronization
+
+Threads communicate primarily by sharing access to fields and the objects reference fields refer to. This form of communication is extremely efficient, but makes two kinds of errors possible: thread interference(线程干扰) and memory consistency errors(内存一致性错误). The tool needed to prevent these errors is synchronization.
+
+```text
+synchronization
+noun [ U ] (UK usually synchronisation)
+UK  /ˌsɪŋ.krə.naɪˈzeɪ.ʃən/ US  /ˌsɪŋ.krə.nəˈzeɪ.ʃən/
+ 
+the fact of happening at the same time, or the act of making things happen at the same time
+同步；同步化
+The words flash on a TV screen in synchronization with the music.
+电视屏幕上的文字与音乐同步显示。
+ 
+the act of making sure that watches or clocks show exactly the same time
+（对多个钟表的）统一校准
+The first step is synchronization of watches.
+第一步是先给手表对时。
+See
+synchronize
+```
+
+The Java programming language provides two basic synchronization idioms: synchronized methods and synchronized statements.
