@@ -1,6 +1,6 @@
 package synchronization;
 
-public class ThreadInterference {
+public class CounterDemo {
 
     public static void main(String[] args) throws InterruptedException {
         Counter c = new Counter();
