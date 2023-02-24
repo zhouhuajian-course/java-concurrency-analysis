@@ -1,5 +1,13 @@
 # Java 并发分析
 
+## concurrentHashMap
+
+ConcurrentHashMap是属于JUC工具包中的并发容器之一
+
+java.util.concurrent
+
+在高并发的情况下，使用HashMap进行大量变更操作容易出现问题，但是ConcurrentHashMap是线程安全的
+
 ## volatile 关键字
 
 ## AtomicInteger
